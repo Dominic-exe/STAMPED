@@ -1,3 +1,521 @@
+/* =====================================================
+   STAMPED — Adelaide Manhole Project
+   Brand & Design System
+   ===================================================== */
+
+
+/* --- Colour Palette Variables --- */
+
+:root {
+
+  /* Brand Colours */
+
+  --stamp-red: #D53302;       /* Vermilion stamp ink */
+  --paper-gold: #FBC560;      /* Warm paper / sunlight */
+  --heritage-green: #A0C8AD;  /* Adelaide nature */
+  --adelaide-sky: #8FB1BE;    /* Coastal South Australia */
+  --ink-black: #0C012A;       /* Ink / night photography */
+
+
+  /* Functional Colours */
+
+  --bg-primary: #ffffff;
+  --bg-paper: #F8F5EF;
+  --bg-dark: var(--ink-black);
+
+  --text-main: var(--ink-black);
+  --text-muted: #555555;
+
+  --accent: var(--stamp-red);
+
+
+  /* Typography */
+
+  --font-display:
+    "Space Grotesk",
+    "Arial",
+    sans-serif;
+
+  --font-body:
+    "Inter",
+    "Helvetica",
+    sans-serif;
+
+
+  /* Layout */
+
+  --max-width: 1200px;
+
+}
+
+
+/* =====================================================
+   Reset
+   ===================================================== */
+
+
+* {
+  box-sizing:border-box;
+}
+
+
+html {
+  scroll-behavior:smooth;
+}
+
+
 body {
-    font-family: Arial, sans-serif;
+
+  margin:0;
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.94),
+      rgba(255,255,255,0.94)
+    );
+
+  color:var(--text-main);
+
+  font-family:var(--font-body);
+
+  line-height:1.6;
+
+}
+
+
+/* =====================================================
+   Typography
+   ===================================================== */
+
+
+h1,
+h2,
+h3,
+h4 {
+
+  font-family:var(--font-display);
+
+  color:var(--ink-black);
+
+  margin-top:0;
+
+  letter-spacing:-0.03em;
+
+}
+
+
+h1 {
+
+  font-size:
+  clamp(3rem,8vw,7rem);
+
+  line-height:0.95;
+
+}
+
+
+h2 {
+
+  font-size:
+  clamp(2rem,5vw,4rem);
+
+}
+
+
+p {
+
+  color:var(--text-muted);
+
+  max-width:700px;
+
+}
+
+
+/* =====================================================
+   Layout Components
+   ===================================================== */
+
+
+.container {
+
+  width:90%;
+
+  max-width:var(--max-width);
+
+  margin:auto;
+
+}
+
+
+.section {
+
+  padding:
+  120px 0;
+
+}
+
+
+.section-dark {
+
+  background:
+  var(--bg-dark);
+
+  color:white;
+
+}
+
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3 {
+
+  color:white;
+
+}
+
+
+
+/* =====================================================
+   Buttons
+   ===================================================== */
+
+
+.btn-primary {
+
+
+  display:inline-block;
+
+
+  background:
+  var(--stamp-red);
+
+
+  color:white;
+
+
+  padding:
+  14px 32px;
+
+
+  border:none;
+
+
+  border-radius:2px;
+
+
+  font-weight:700;
+
+
+  letter-spacing:2px;
+
+
+  text-transform:uppercase;
+
+
+  cursor:pointer;
+
+
+  transition:
+  transform .2s ease,
+  background .2s ease;
+
+
+}
+
+
+
+.btn-primary:hover {
+
+  background:#A82700;
+
+  transform:
+  translateY(-3px);
+
+}
+
+
+
+.btn-secondary {
+
+
+  display:inline-block;
+
+
+  background:
+  var(--paper-gold);
+
+
+  color:
+  var(--ink-black);
+
+
+  padding:
+  14px 32px;
+
+
+  border-radius:2px;
+
+
+  font-weight:700;
+
+
+  letter-spacing:2px;
+
+
+  text-transform:uppercase;
+
+
+}
+
+
+
+/* =====================================================
+   Stamp Elements
+   ===================================================== */
+
+
+.stamp {
+
+
+  display:inline-block;
+
+
+  border:
+  3px solid var(--stamp-red);
+
+
+  color:
+  var(--stamp-red);
+
+
+  padding:
+  10px 20px;
+
+
+  text-transform:uppercase;
+
+
+  letter-spacing:3px;
+
+
+  font-weight:700;
+
+
+  transform:
+  rotate(-3deg);
+
+
+}
+
+
+
+/* =====================================================
+   Cards
+   ===================================================== */
+
+
+.card {
+
+
+  background:white;
+
+
+  border:
+  1px solid #ddd;
+
+
+  padding:
+  32px;
+
+
+  box-shadow:
+  8px 8px 0 var(--paper-gold);
+
+
+}
+
+
+
+.card-header {
+
+
+  border-bottom:
+  2px solid var(--heritage-green);
+
+
+  padding-bottom:
+  15px;
+
+
+  margin-bottom:
+  20px;
+
+
+}
+
+
+
+/* =====================================================
+   Badges
+   ===================================================== */
+
+
+.badge {
+
+
+  display:inline-block;
+
+
+  background:
+  var(--heritage-green);
+
+
+  color:
+  var(--ink-black);
+
+
+  padding:
+  5px 14px;
+
+
+  border-radius:
+  2px;
+
+
+  font-size:.85rem;
+
+
+  font-weight:600;
+
+
+}
+
+
+
+/* =====================================================
+   Hero Section
+   ===================================================== */
+
+
+.hero {
+
+
+  min-height:
+  100vh;
+
+
+  display:flex;
+
+
+  align-items:center;
+
+
+  position:relative;
+
+
+  overflow:hidden;
+
+
+}
+
+
+.hero-content {
+
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+
+
+.hero-overlay {
+
+
+  position:absolute;
+
+
+  inset:0;
+
+
+  background:
+  linear-gradient(
+    90deg,
+    rgba(12,1,42,.85),
+    rgba(12,1,42,.3)
+  );
+
+
+}
+
+
+
+/* =====================================================
+   Animations
+   ===================================================== */
+
+
+.fade-in {
+
+
+  animation:
+  fadeIn 1s ease forwards;
+
+
+}
+
+
+
+@keyframes fadeIn {
+
+
+  from {
+
+    opacity:0;
+
+    transform:
+    translateY(20px);
+
+  }
+
+
+  to {
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+  }
+
+
+}
+
+
+
+/* =====================================================
+   Responsive
+   ===================================================== */
+
+
+@media(max-width:768px){
+
+
+  .section {
+
+    padding:
+    80px 0;
+
+  }
+
+
+  h1 {
+
+    font-size:
+    3rem;
+
+  }
+
+
 }
