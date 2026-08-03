@@ -449,7 +449,68 @@ p {
 
 }
 
+/* =====================================================
+   Hero Image
+   ===================================================== */
 
+
+.hero-image {
+
+position:absolute;
+
+inset:0;
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+
+/* Hero Text */
+
+.hero-content {
+
+color:white;
+
+max-width:800px;
+
+}
+
+
+
+.hero-content h1 {
+
+color:white;
+
+}
+
+
+
+.hero-content p {
+
+color:white;
+
+font-size:1.3rem;
+
+max-width:650px;
+
+}
+
+
+
+/* Hero stamp */
+
+.hero .stamp {
+
+margin-bottom:30px;
+
+background:white;
+
+}
 
 /* =====================================================
    Animations
