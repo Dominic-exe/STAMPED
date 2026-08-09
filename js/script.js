@@ -280,8 +280,6 @@ if (mapElement && typeof L !== "undefined") {
     });
 
 }
-
-
 /* =====================================================
    NEWSLETTER
    Google Forms integration
@@ -298,38 +296,7 @@ if (newsletterForm) {
 
     newsletterForm.addEventListener(
         "submit",
-        async (event) => {
-
-            event.preventDefault();
-
-
-            const firstName =
-                document.getElementById(
-                    "newsletter-first-name"
-                ).value.trim();
-
-
-            const lastName =
-                document.getElementById(
-                    "newsletter-last-name"
-                ).value.trim();
-
-
-            const email =
-                document.getElementById(
-                    "newsletter-email"
-                ).value.trim();
-
-
-            if (!firstName || !lastName || !email) {
-
-                newsletterMessage.textContent =
-                    "Please fill in all three fields.";
-
-                return;
-
-            }
-
+        () => {
 
             const submitButton =
                 newsletterForm.querySelector(
@@ -343,62 +310,14 @@ if (newsletterForm) {
                 "Joining...";
 
 
-            newsletterMessage.textContent = "";
-
-
             /*
-             * Google Form submission endpoint.
+             * Google Forms receives the submission
+             * through the hidden iframe.
              *
-             * This is the same Google Form you created:
-             *
-             * 1FAIpQLSeolFJO3v1ZVUdg0h4k0N3tH2guKlpBXLo8qSgYmDSqImi86g
+             * The visitor never leaves STAMPED.
              */
 
-            const googleFormURL =
-                "https://docs.google.com/forms/d/e/1FAIpQLSeolFJO3v1ZVUdg0h4k0N3tH2guKlpBXLo8qSgYmDSqImi86g/formResponse";
-
-
-            const formData =
-                new FormData();
-
-
-            formData.append(
-                "entry.1353931657",
-                firstName
-            );
-
-
-            formData.append(
-                "entry.224314355",
-                lastName
-            );
-
-
-            formData.append(
-                "entry.172986692",
-                email
-            );
-
-
-            try {
-
-                await fetch(
-                    googleFormURL,
-                    {
-                        method: "POST",
-                        mode: "no-cors",
-                        body: formData
-                    }
-                );
-
-
-                /*
-                 * Google Forms doesn't return a readable
-                 * response when using no-cors.
-                 *
-                 * If the request was sent, we treat it
-                 * as successful.
-                 */
+            setTimeout(() => {
 
                 newsletterMessage.textContent =
                     "You're in. We'll see you underground.";
@@ -410,28 +329,12 @@ if (newsletterForm) {
                 newsletterForm.reset();
 
 
-            } catch (error) {
+                submitButton.disabled = false;
 
-                console.error(
-                    "Newsletter signup failed:",
-                    error
-                );
+                submitButton.textContent =
+                    "Join";
 
-
-                newsletterMessage.textContent =
-                    "Something went wrong. Please try again.";
-
-
-                newsletterMessage.style.color =
-                    "#D53302";
-
-            }
-
-
-            submitButton.disabled = false;
-
-            submitButton.textContent =
-                "Join";
+            }, 1000);
 
         }
     );

@@ -569,54 +569,62 @@
                 STAY IN THE LOOP
             </span>
 
-            <form
-                id="newsletter-form"
-                class="newsletter-form"
-            >
-
-                <input
-                    type="text"
-                    id="newsletter-first-name"
-                    placeholder="First name"
-                    autocomplete="given-name"
-                    required
+                <form
+                    id="newsletter-form"
+                    class="newsletter-form"
+                    action="https://docs.google.com/forms/d/e/1FAIpQLSeolFJO3v1ZVUdg0h4k0N3tH2guKlpBXLo8qSgYmDSqImi86g/formResponse"
+                    method="POST"
+                    target="google-form-submit"
                 >
 
-                <input
-                    type="text"
-                    id="newsletter-last-name"
-                    placeholder="Last name"
-                    autocomplete="family-name"
-                    required
-                >
+                    <input
+                        type="text"
+                        name="entry.1353931657"
+                        id="newsletter-first-name"
+                        placeholder="First name"
+                        autocomplete="given-name"
+                        required
+                    >
 
-                <input
-                    type="email"
-                    id="newsletter-email"
-                    placeholder="Email address"
-                    autocomplete="email"
-                    required
-                >
+                    <input
+                        type="text"
+                        name="entry.224314355"
+                        id="newsletter-last-name"
+                        placeholder="Last name"
+                        autocomplete="family-name"
+                        required
+                    >
 
-                <button
-                    type="submit"
-                    class="btn btn-primary"
-                >
-                    Join
-                </button>
+                    <input
+                        type="email"
+                        name="entry.172986692"
+                        id="newsletter-email"
+                        placeholder="Email address"
+                        autocomplete="email"
+                        required
+                    >
 
-            </form>
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Join
+                    </button>
 
-            <p
-                id="newsletter-message"
-                class="form-message"
-                aria-live="polite"
-            ></p>
+                </form>
 
-            <p
-                id="newsletter-message"
-                class="form-message"
-            ></p>
+                <iframe
+                    name="google-form-submit"
+                    id="google-form-submit"
+                    class="hidden-form-frame"
+                    title="Newsletter submission"
+                ></iframe>
+
+                <p
+                    id="newsletter-message"
+                    class="form-message"
+                    aria-live="polite"
+                ></p>
 
         </div>
 
