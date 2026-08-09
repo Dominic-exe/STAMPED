@@ -575,10 +575,26 @@
             >
 
                 <input
+                    type="text"
+                    id="newsletter-first-name"
+                    placeholder="First name"
+                    autocomplete="given-name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="newsletter-last-name"
+                    placeholder="Last name"
+                    autocomplete="family-name"
+                    required
+                >
+
+                <input
                     type="email"
                     id="newsletter-email"
-                    placeholder="Your email"
-                    aria-label="Your email"
+                    placeholder="Email address"
+                    autocomplete="email"
                     required
                 >
 
@@ -590,6 +606,12 @@
                 </button>
 
             </form>
+
+            <p
+                id="newsletter-message"
+                class="form-message"
+                aria-live="polite"
+            ></p>
 
             <p
                 id="newsletter-message"

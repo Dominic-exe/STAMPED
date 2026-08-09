@@ -284,27 +284,36 @@ if (mapElement && typeof L !== "undefined") {
 
 /* =====================================================
    NEWSLETTER
+   Google Forms integration
    ===================================================== */
 
 const newsletterForm =
-    document.getElementById(
-        "newsletter-form"
-    );
-
+    document.getElementById("newsletter-form");
 
 const newsletterMessage =
-    document.getElementById(
-        "newsletter-message"
-    );
+    document.getElementById("newsletter-message");
 
 
 if (newsletterForm) {
 
     newsletterForm.addEventListener(
         "submit",
-        event => {
+        async (event) => {
 
             event.preventDefault();
+
+
+            const firstName =
+                document.getElementById(
+                    "newsletter-first-name"
+                ).value.trim();
+
+
+            const lastName =
+                document.getElementById(
+                    "newsletter-last-name"
+                ).value.trim();
+
 
             const email =
                 document.getElementById(
@@ -312,29 +321,117 @@ if (newsletterForm) {
                 ).value.trim();
 
 
-            if (!email) return;
+            if (!firstName || !lastName || !email) {
+
+                newsletterMessage.textContent =
+                    "Please fill in all three fields.";
+
+                return;
+
+            }
+
+
+            const submitButton =
+                newsletterForm.querySelector(
+                    "button[type='submit']"
+                );
+
+
+            submitButton.disabled = true;
+
+            submitButton.textContent =
+                "Joining...";
+
+
+            newsletterMessage.textContent = "";
 
 
             /*
-                TEMPORARY VERSION
+             * Google Form submission endpoint.
+             *
+             * This is the same Google Form you created:
+             *
+             * 1FAIpQLSeolFJO3v1ZVUdg0h4k0N3tH2guKlpBXLo8qSgYmDSqImi86g
+             */
 
-                This currently doesn't send anything.
+            const googleFormURL =
+                "https://docs.google.com/forms/d/e/1FAIpQLSeolFJO3v1ZVUdg0h4k0N3tH2guKlpBXLo8qSgYmDSqImi86g/formResponse";
 
-                Later connect this to:
-                - Buttondown
-                - Mailchimp
-                - ConvertKit
-                - Brevo
-                - your own backend
-            */
 
-            newsletterMessage.textContent =
-                "You're on the list. STAMPED is coming.";
+            const formData =
+                new FormData();
 
-            newsletterMessage.style.color =
-                "#FBC560";
 
-            newsletterForm.reset();
+            formData.append(
+                "entry.1353931657",
+                firstName
+            );
+
+
+            formData.append(
+                "entry.224314355",
+                lastName
+            );
+
+
+            formData.append(
+                "entry.172986692",
+                email
+            );
+
+
+            try {
+
+                await fetch(
+                    googleFormURL,
+                    {
+                        method: "POST",
+                        mode: "no-cors",
+                        body: formData
+                    }
+                );
+
+
+                /*
+                 * Google Forms doesn't return a readable
+                 * response when using no-cors.
+                 *
+                 * If the request was sent, we treat it
+                 * as successful.
+                 */
+
+                newsletterMessage.textContent =
+                    "You're in. We'll see you underground.";
+
+                newsletterMessage.style.color =
+                    "#FBC560";
+
+
+                newsletterForm.reset();
+
+
+            } catch (error) {
+
+                console.error(
+                    "Newsletter signup failed:",
+                    error
+                );
+
+
+                newsletterMessage.textContent =
+                    "Something went wrong. Please try again.";
+
+
+                newsletterMessage.style.color =
+                    "#D53302";
+
+            }
+
+
+            submitButton.disabled = false;
+
+            submitButton.textContent =
+                "Join";
 
         }
     );

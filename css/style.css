@@ -998,9 +998,25 @@ p {
 }
 
 
-.newsletter-form {
-    display: flex;
+..newsletter-form {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 8px;
+
     margin-top: 20px;
+}
+
+
+.newsletter-form input[type="email"] {
+    grid-column: 1 / -1;
+}
+
+
+.newsletter-form button {
+    grid-column: 1 / -1;
 }
 
 
@@ -1239,13 +1255,13 @@ p {
 
 
     .newsletter-form {
-        flex-direction: column;
-        gap: 10px;
+        grid-template-columns: 1fr;
     }
 
 
-    .newsletter-form input {
-        border-right: 1px solid rgba(255,255,255,.25);
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        grid-column: auto;
     }
 
 }
