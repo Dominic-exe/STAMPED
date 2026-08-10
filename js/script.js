@@ -263,25 +263,25 @@ if (mapElement && typeof L !== "undefined") {
 
         {
             name: "Hutt Street",
-            coords: [-34.930801, 138.612271],
+            coords: [-34.9308, 138.6122],
             status: "Location to investigate"
         }
 
         {
             name: "Adelaide Central Market",
-            coords: [-34.929607, 138.597432],
+            coords: [-34.9296, 138.5974],
             status: "Location to investigate"
         }
         
         {
             name: "Adelaide Central Market",
-            coords: [-34.929607, 138.597432],
+            coords: [-34.9296, 138.5974],
             status: "Location to investigate"
         }
 
           {
             name: "Rundle Street",
-            coords: [-34.922497, 138.609253],
+            coords: [-34.9224, 138.6092],
             status: "Location to investigate"
         }
 
