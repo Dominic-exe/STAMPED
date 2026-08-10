@@ -952,8 +952,7 @@ p {
 
     grid-template-columns:
         1fr
-        .7fr
-        1.3fr;
+        1.5fr;
 
     gap: 80px;
 }
