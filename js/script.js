@@ -273,13 +273,13 @@ if (mapElement && typeof L !== "undefined") {
             status: "Location to investigate"
         },
         
-        { 
+        {
             name: "Hindley Street",
             coords: [-34.9232, 138.5957],
             status: "Location to investigate"
         },
 
-          {
+        {
             name: "Rundle Street",
             coords: [-34.9224, 138.6092],
             status: "Location to investigate"
