@@ -258,26 +258,26 @@ if (mapElement && typeof L !== "undefined") {
             name: "Victoria Square",
             coords: [-34.9289, 138.5985],
             status: "Location to investigate"
-        }
+        },
 
 
         {
             name: "Hutt Street",
             coords: [-34.9308, 138.6122],
             status: "Location to investigate"
-        }
+        },
 
         {
             name: "Adelaide Central Market",
             coords: [-34.9296, 138.5974],
             status: "Location to investigate"
-        }
+        },
         
         {
             name: "Adelaide Central Market",
             coords: [-34.9296, 138.5974],
             status: "Location to investigate"
-        }
+        },
 
           {
             name: "Rundle Street",
@@ -286,10 +286,6 @@ if (mapElement && typeof L !== "undefined") {
         }
 
        
-
-
-
-
 
     ];
 
