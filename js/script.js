@@ -248,13 +248,7 @@ if (mapElement && typeof L !== "undefined") {
 
     const locations = [
 
-        {
-            name: "STAMPED — Adelaide CBD",
-            coords: [-34.9285, 138.6007],
-            status: "Project area"
-        },
-
-        {
+         {
             name: "North Terrace",
             coords: [-34.9215, 138.6035],
             status: "Location to investigate"
@@ -265,6 +259,37 @@ if (mapElement && typeof L !== "undefined") {
             coords: [-34.9289, 138.5985],
             status: "Location to investigate"
         }
+
+
+        {
+            name: "Hutt Street",
+            coords: [-34.930801, 138.612271],
+            status: "Location to investigate"
+        }
+
+        {
+            name: "Adelaide Central Market",
+            coords: [-34.929607, 138.597432],
+            status: "Location to investigate"
+        }
+        
+        {
+            name: "Adelaide Central Market",
+            coords: [-34.929607, 138.597432],
+            status: "Location to investigate"
+        }
+
+          {
+            name: "Rundle Street",
+            coords: [-34.922497, 138.609253],
+            status: "Location to investigate"
+        }
+
+       
+
+
+
+
 
     ];
 
