@@ -998,7 +998,7 @@ p {
 }
 
 
-..newsletter-form {
+.newsletter-form {
     display: grid;
 
     grid-template-columns:
