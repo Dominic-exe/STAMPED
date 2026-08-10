@@ -275,7 +275,7 @@ if (mapElement && typeof L !== "undefined") {
         
         {
             name: "Hindley Street",
-            coords: [-34.923215, 138.595745],
+            coords: [-34.9232, 138.5957],
             status: "Location to investigate"
         },
 
