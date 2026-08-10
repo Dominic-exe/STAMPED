@@ -274,8 +274,8 @@ if (mapElement && typeof L !== "undefined") {
         },
         
         {
-            name: "Adelaide Central Market",
-            coords: [-34.9296, 138.5974],
+            name: "Hindley Street",
+            coords: [-34.923215, 138.595745],
             status: "Location to investigate"
         },
 
